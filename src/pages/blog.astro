@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "blog";
 ---
 
 <html lang="en">
@@ -8,14 +8,19 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>kat's portfolio</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 	<a href="/">home</a>
 	<a href="/about/">about</a>
 	<a href="/blog/">blog</a>
 	
-		<h1>my blog</h1>
-        <p></p>
+		<h1>{pageTitle}</h1>
+        <p>this is my "blog" page that's really going to be maybe something else some day? </p>
+        <ul>
+            <li><a href="/posts/post-1/">Post 1</a></li>
+            <li><a href="/posts/post-2/">Post 2</a></li>
+            <li><a href="/posts/post-3/">Post 3</a></li>
+          </ul>
 	</body>
 </html>
