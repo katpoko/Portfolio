@@ -17,9 +17,10 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "blue";
+const skillColor = "#ff9776";
 const fontWeight = "bold";
-const textCase = "uppercase";
+const textCase = "TitleCase";
+
 ---
 
 
@@ -27,15 +28,17 @@ const textCase = "uppercase";
 
     <BaseLayout pageTitle={pageTitle}>
       <style define:vars={{skillColor, fontWeight, textCase}}>
-        h2 {
-          color: purple;
-          font-size: 0.8rem;
-        }
+      
+      h2 { 
+        font-size: 0.8rem;
+      
+      }
         .skill {
           color: var(--skillColor);
           font-weight: var(--fontWeight);
           text-transform: var(--textCase);
         }
+
       </style>
     <h2>to the portfolio mothership. 🚀</h2>
     <p>Here are a few facts about me:</p>
