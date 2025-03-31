@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const pageTitle = "blog";
 ---
@@ -16,9 +17,9 @@ const pageTitle = "blog";
             color: rgb(255, 0, 238);
         }
     </style>
-        <p>this is my "blog" page that's really going to be maybe something else some day? </p>
+        <p>this is my "blog" page that's really going to be where each project will be housed </p>
         <ul>
-            {allPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+            {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
 		</ul>
 		
 </BaseLayout>
