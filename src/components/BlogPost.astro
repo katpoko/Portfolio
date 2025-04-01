@@ -2,4 +2,21 @@
 const { title, url } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<li class="blogPost"><a href={url}>{title}</a></li>
+<!-- <style>
+    .blogPost {
+        list-style-type: none;
+        margin: 1rem 0;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        color: #860594;
+    }
+    .blogPost a {
+        text-decoration: none;
+        color: #333;
+    }
+    .blogPost a:hover {
+        text-decoration: underline;
+    }
+</style> -->
