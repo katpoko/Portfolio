@@ -1,48 +1,50 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
+  <p>{frontmatter.pubDate.toLocaleDateString()}</p>
 
-<p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+  <p>From the Brain of {frontmatter.author}</p>
 
-<p> From the Brain of {frontmatter.author} </p>
+  <p><em>{frontmatter.description}</em></p>
 
-<p><em>{frontmatter.description}</em></p>
+  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
-<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
-<div class="tags">
-    {frontmatter.tags.map((tag: string) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
+  <div class="tags">
+    {
+      frontmatter.tags.map((tag: string) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
   </div>
-<slot />
-
+  <slot />
 </BaseLayout>
 
 <style>
-    a {
-        color: #860594;
-        text-decoration: none;
-    }
-    a:hover {
-        text-decoration: underline;
-        color:rgb(32, 38, 218);
-        transition-duration: 0.4ms;
-    }
+  a {
+    color: #860594;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: rgb(32, 38, 218);
+    transition-duration: 0.4ms;
+  }
 
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: .5em;
-        padding: .5em 1em;
-        font-size: 1.14em;
-        background-color: #e7cef6;
-    }
-
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.14em;
+    background-color: #e7cef6;
+  }
 </style>

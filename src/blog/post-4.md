@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+
 title: 'My Fourth Blog Post'
 author: 'katpoko'
 description: "This post will show up on its own!"
